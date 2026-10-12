@@ -414,7 +414,7 @@ def dv01(settlement: date, maturity: date, coupon_pct: float, yield_pct: float, 
     """
     # modified duration times the dirty price, for one basis point (0.0001 as a decimal)
     duration_years = modified_duration(settlement, maturity, coupon_pct, yield_pct, frequency, basis)
-    full_price = price(settlement, maturity, coupon_pct, yield_pct, frequency, basis)
+    full_price = dirty_price(settlement, maturity, coupon_pct, yield_pct, frequency, basis)
     return duration_years * full_price * 0.0001
 
 
