@@ -6,3 +6,11 @@ Every expected value in `test_bondmath.py` is Excel's own result, stored in the 
 > This course is educational content created in a personal capacity. Nothing here is investment advice or a recommendation to buy or sell any security. All portfolio data is synthetic.
 
 Run the tests with `python -m pytest -q test_bondmath.py`.
+
+## Conventions
+
+The units of every function in `bondmath.py`, as its docstring states them:
+
+* `coupon_pct` and `yield_pct` are annual rates in percent: 7.0 means 7 percent.
+* Prices and accrued interest are per 100 of face.
+* Durations are in years, convexity in years squared, spreads in basis points.
