@@ -1,0 +1,10 @@
+name: health
+on:
+  schedule:
+    - cron: "0 6 * * *"
+  workflow_dispatch:
+jobs:
+  health:
+    runs-on: ubuntu-latest
+    steps:
+      - run: curl -sS --fail -o /dev/null -w "GET /health HTTP status %{http_code}" https://pfi-bond-service.vercel.app/health
